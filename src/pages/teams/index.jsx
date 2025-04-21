@@ -1,3 +1,9 @@
+import img1 from "../../assets/Images/author/img1.png";
+import img2 from "../../assets/Images/author/img2.png";
+import img3 from "../../assets/Images/author/img3.png";
+import img4 from "../../assets/Images/author/img4.png";
+import img5 from "../../assets/Images/author/img5.png";
+import img6 from "../../assets/Images/author/img6.png";
 export default function DashboardTables() {
   const authors = [
     {
@@ -5,6 +11,7 @@ export default function DashboardTables() {
       email: "esthera@simmmple.com",
       role: "Manager",
       org: "Organization",
+      photo: img1,
       status: "Online",
     },
     {
@@ -12,6 +19,7 @@ export default function DashboardTables() {
       email: "alexa@simmmple.com",
       role: "Programmer",
       org: "Developer",
+      photo: img2,
       status: "Offline",
     },
     {
@@ -19,6 +27,7 @@ export default function DashboardTables() {
       email: "laurent@simmmple.com",
       role: "Executive",
       org: "Projects",
+      photo: img3,
       status: "Online",
     },
     {
@@ -26,6 +35,7 @@ export default function DashboardTables() {
       email: "fred@simmmple.com",
       role: "Manager",
       org: "Organization",
+      photo: img4,
       status: "Online",
     },
     {
@@ -33,6 +43,7 @@ export default function DashboardTables() {
       email: "daniel@simmmple.com",
       role: "Programmer",
       org: "Developer",
+      photo: img5,
       status: "Offline",
     },
     {
@@ -40,6 +51,7 @@ export default function DashboardTables() {
       email: "mark@simmmple.com",
       role: "Designer",
       org: "UI/UX Design",
+      photo: img6,
       status: "Offline",
     },
   ];
@@ -53,7 +65,7 @@ export default function DashboardTables() {
   };
 
   return (
-    <div className="p-6  text-white min-h-screen">
+    <div className="p-5  text-white min-h-screen">
       <div className="bg-[#092045] rounded-2xl p-6 shadow-lg">
         <h2 className="text-xl font-semibold mb-4">Authors Table</h2>
         <table className="w-full text-sm text-left">
@@ -69,7 +81,12 @@ export default function DashboardTables() {
           <tbody>
             {authors.map((item, index) => (
               <tr key={index} className="border-t border-slate-700">
-                <td className="py-4">
+                <td className="py-3 flex">
+                  <img
+                    className="rounded-2xl mr-2"
+                    src={item.photo}
+                    alt={item.name}
+                  />
                   <div>
                     <div className="font-medium">{item.name}</div>
                     <div className="text-gray-400">{item.email}</div>
@@ -90,7 +107,7 @@ export default function DashboardTables() {
                 </td>
                 <td>14/06/21</td>
                 <td>
-                  <button className="text-blue-400 hover:underline text-sm">
+                  <button className="text-blue-400 hover:underline text-sm cursor-pointer">
                     Edit
                   </button>
                 </td>

@@ -4,6 +4,8 @@ import Dashboard from "../../pages/dashboard";
 import SideBar from "../../components/sidebar";
 import Projects from "../../pages/projects";
 import Teams from "../../pages/teams";
+import Billing from "../../pages/billing/index";
+import Login from "../../pages/signup/Login";
 
 export default function AppRouter() {
   return (
@@ -16,6 +18,8 @@ export default function AppRouter() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/teams" element={<Teams />} />
+          <Route path="/billing" element={<Billing />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </div>

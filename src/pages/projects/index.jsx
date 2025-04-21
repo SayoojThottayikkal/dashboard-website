@@ -1,36 +1,41 @@
 import React from "react";
+import img1 from "../../assets/Images/project/img1.png";
+import img2 from "../../assets/Images/project/img2.png";
+import img3 from "../../assets/Images/project/img3.png";
+import img4 from "../../assets/Images/project/img4.png";
+import img5 from "../../assets/Images/project/img5.svg";
 export default function Projects() {
   const project = [
     {
-      logo: "/logos/xd.png",
+      logo: img4,
       name: "Chakra Soft UI Version",
       budget: "$14,000",
       status: "Working",
       progress: 60,
     },
     {
-      logo: "/logos/slack.png",
+      logo: img1,
       name: "Add Progress Track",
       budget: "$3,000",
       status: "Canceled",
       progress: 10,
     },
     {
-      logo: "/logos/github.png",
+      logo: img5,
       name: "Fix Platform Errors",
       budget: "Not set",
       status: "Done",
       progress: 100,
     },
     {
-      logo: "/logos/mobile.png",
+      logo: img3,
       name: "Launch our Mobile App",
       budget: "$32,000",
       status: "Done",
       progress: 100,
     },
     {
-      logo: "/logos/figma.png",
+      logo: img2,
       name: "Add the New Pricing Page",
       budget: "$400",
       status: "Working",
@@ -76,6 +81,7 @@ export default function Projects() {
                     {item.progress}%
                   </span>
                 </td>
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <td className="py-3 pr-2 ">
                   <button className="text-white text-xl   cursor-pointer">
                     ⋮
