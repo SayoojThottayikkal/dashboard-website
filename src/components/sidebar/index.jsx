@@ -6,8 +6,10 @@ import {
   FaFileInvoiceDollar,
   FaSignInAlt,
   FaRProject,
-  FaBars, // Toggle Icon
+  FaBars,
 } from "react-icons/fa";
+import img from "../../assets/Images/side1.png";
+import img1 from "../../assets/Images/side2.png";
 
 export default function SideBar() {
   const navigate = useNavigate();
@@ -37,14 +39,20 @@ export default function SideBar() {
     <div
       key={item.id}
       onClick={() => navigate(item.route)}
-      className={`flex items-center gap-3 px-4 py-2 mb-2 rounded-lg cursor-pointer transition-all ${
+      className={`flex items-center gap-3 px-4 py-2 mb-2 rounded-lg cursor-pointer transition-all duration-200 ${
         location.pathname === item.route
           ? "bg-blue-600 text-white"
           : "hover:bg-blue-900 text-gray-300"
       }`}
     >
-      <div className="text-lg">{item.icon}</div>
-      {isOpen && <span className="text-sm">{item.title}</span>}
+      <div className="text-lg min-w-[24px]">{item.icon}</div>
+      <span
+        className={`text-sm transition-all duration-300 ${
+          isOpen ? "opacity-100" : "opacity-0 hidden"
+        }`}
+      >
+        {item.title}
+      </span>
     </div>
   );
 
@@ -52,7 +60,7 @@ export default function SideBar() {
     <div
       className={`${
         isOpen ? "w-64" : "w-20"
-      } h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] p-4 text-white transition-all duration-300`}
+      } h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] p-4 text-white transition-all duration-300 overflow-hidden`}
     >
       <div className="flex justify-end mb-6">
         <button
@@ -77,6 +85,29 @@ export default function SideBar() {
         </h2>
       )}
       <div>{renderNavItem(accountItem)}</div>
+
+      <div className="relative mt-10 rounded-2xl overflow-hidden">
+        <img src={img} alt="Help" className="w-full h-auto object-cover" />
+        <div className="absolute top-4 left-4 text-white">
+          {isOpen && (
+            <>
+              <div className="mb-3">
+                <img src={img1} alt="" />
+              </div>
+              <h2 className="text-lg font-semibold">Need help?</h2>
+              <p className="text-sm">Please check our docs</p>
+            </>
+          )}
+        </div>
+
+        {isOpen && (
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+            <button className="bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white font-bold text-xs px-6 py-2 rounded-full shadow-md w-full">
+              DOCUMENTATION
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

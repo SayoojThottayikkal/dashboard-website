@@ -44,7 +44,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="bg-#0A0E23 p-6 rounded-2xl text-white shadow-xl mt-6">
+    <div className="bg-[#092045] p-6 rounded-2xl text-white shadow-xl mt-6">
       <h2 className="text-lg font-semibold mb-1">Projects</h2>
       <p className="text-sm text-gray-400 mb-4">30 done this month</p>
       <div className="overflow-x-auto">
