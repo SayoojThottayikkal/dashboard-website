@@ -1,16 +1,26 @@
 import React from "react";
-
+import img from "../../assets/Images/billing/icon.png";
+import img3 from "../../assets/Images/billing/Circles.png";
+import img2 from "../../assets/Images/billing/atm.svg";
+import img5 from "../../assets/Images/billing/vector1.png";
+import img4 from "../../assets/Images/billing/vector.svg";
+import imgcard from "../../assets/Images/billing/shadow.png";
 function Billing() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 text-white font-sans">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-gradient-to-br from-blue-800 to-indigo-900 rounded-2xl p-6 shadow-lg">
-            <h2 className="text-sm font-semibold mb-2">Vision UI</h2>
+          <div className="bg-gradient-to-br from-blue-800 to-indigo-900 rounded-2xl p-5 shadow-lg">
+            <div className="flex justify-between py-5">
+              <h2 className="text-sm font-semibold mb-5">Vision UI</h2>
+              <div className="w-10">
+                <img src={img3} alt="" />
+              </div>
+            </div>
             <div className="text-xl font-bold tracking-widest mb-2">
               7812 2139 0823 XXXX
             </div>
-            <div className="flex justify-between text-xs">
+            <div className="flex gap-3 text-xs">
               <div>
                 <div className="text-gray-400">VALID THRU</div>
                 <div>05/24</div>
@@ -22,28 +32,54 @@ function Billing() {
             </div>
           </div>
 
-          <div className="bg-[#1e293b] rounded-2xl p-6 shadow-lg">
-            <h3 className="text-gray-400 text-sm mb-1">Credit Balance</h3>
-            <div className="text-2xl font-bold mb-4">$25,215</div>
+          <div className="bg rounded-2xl p-6 shadow-lg">
+            <div className="flex justify-between">
+              <div>
+                <h3 className="text-gray-400 text-sm mb-1">Credit Balance</h3>
+                <div className="text-2xl font-bold mb-4">$25,215</div>
+              </div>
+              <div className="h-20 w-1/2">
+                <img src={imgcard} alt="" />
+              </div>
+            </div>
             <div className="text-sm flex items-center justify-between">
-              <span className="text-green-400">✓ Bills & Taxes</span>
+              <div className="">
+                <div className="text-gray-400 text-xs mb-2">NEWEST</div>
+                <div className="flex gap-1">
+                  <div className="w-10 h-10">
+                    <img src={img} alt="" />
+                  </div>
+                  <span className="text-green-400">
+                    Bills & Taxes <br />
+                    <p className="text-gray-400 text-sm">Today, 16:36</p>
+                  </span>
+                </div>
+              </div>
               <span className="text-red-400">-154.50</span>
             </div>
           </div>
 
-          <div className="col-span-2 bg-[#1e293b] rounded-2xl p-6 shadow-lg">
+          <div className="col-span-2 bg-[#1e293b] rounded-2xl p-6 shadow-lg ">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-sm font-semibold">Payment Method</h3>
               <button className="bg-blue-600 px-4 py-1 rounded-full text-xs font-bold">
                 ADD A NEW CARD
               </button>
             </div>
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="bg-[#0f172a] px-4 py-2 rounded-lg text-sm">
+            <div className="flex flex-col justify-around md:flex-row gap-4 ">
+              <div className="bg-[#0f172a] border-1 relative border-amber-50 px-4 py-2 w-1/2 rounded-lg text-sm flex gap-5">
+                <img src={img2} alt="" />
                 7812 2139 0023-XXXX
+                <div className="absolute right-3 top-3">
+                  <img src={img5} alt="" />
+                </div>
               </div>
-              <div className="bg-[#0f172a] px-4 py-2 rounded-lg text-sm">
+              <div className="bg-[#0f172a] border-1  relative border-amber-50 px-4 py-2 w-1/2 rounded-lg text-sm flex gap-5">
+                <img src={img4} alt="" />
                 7812 2139 0823-XXXX
+                <div className="absolute right-3 top-3">
+                  <img src={img5} alt="" />
+                </div>
               </div>
             </div>
           </div>
@@ -88,9 +124,9 @@ function Billing() {
               "April 05, 2020",
               "June 25, 2019",
               "March 01, 2019",
-            ].map((date, i) => (
+            ].map((date, index) => (
               <div
-                key={i}
+                key={index}
                 className="flex justify-between text-sm py-1 border-b border-slate-700 last:border-none"
               >
                 <span>{date}</span>
