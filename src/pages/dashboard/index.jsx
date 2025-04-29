@@ -37,6 +37,7 @@ import Vectoricon2 from "../../assets/Images/dashboard/Vectoricon2.png";
 import Vectoricon3 from "../../assets/Images/dashboard/Vectoricon5.png";
 import Vectoricon4 from "../../assets/Images/dashboard/iconnew.png";
 import Vectoricon5 from "../../assets/Images/dashboard/bell.png";
+import check from "../../assets/Images/dashboard/check.png";
 
 const salesData = [
   { name: "Jan", sales: 4000 },
@@ -374,12 +375,16 @@ export default function Dashboard() {
         </div>
       </div>
       {/* 6th card */}
-      <div className="flex gap-6 bg-gradient-to-br from-[#0B1532] to-[#051F3D] p-6 rounded-3xl text-white text-sm">
-        {/* Projects */}
+      <div className="flex gap-6  p-6 rounded-3xl text-white text-sm">
         <div className="flex-1 bg-[#0A1A36] p-4 rounded-2xl">
-          <div className="flex justify-between mb-4">
-            <h3 className="text-lg font-semibold">Projects</h3>
-            <span className="text-green-400 text-sm">30 done this month</span>
+          <div className="flex flex-col mb-4">
+            <h3 className="text-lg font-semibold mb-1">Projects</h3>
+            <span className="text-green-400 text-sm flex gap-2 items-center">
+              <span className="text-center">
+                <img src={check} alt="" />
+              </span>
+              30 done this month
+            </span>
           </div>
           <table className="w-full text-left">
             <thead>
@@ -393,7 +398,7 @@ export default function Dashboard() {
             <tbody>
               {projects.map((proj, index) => (
                 <tr key={index} className="border-b border-gray-700">
-                  <td className="py-2 flex items-center gap-2">
+                  <td className="py-4 flex items-center gap-2">
                     <img src={proj.icon} alt="" />
                     {proj.company}
                   </td>
@@ -407,6 +412,9 @@ export default function Dashboard() {
                         className="bg-blue-500 h-2 rounded-full"
                         style={{ width: `${proj.completion}%` }}
                       ></div>
+                      <span className="text-xs text-white ml-1">
+                        {proj.completion}%
+                      </span>
                     </div>
                   </td>
                 </tr>
@@ -415,11 +423,16 @@ export default function Dashboard() {
           </table>
         </div>
 
-        {/* Orders Overview */}
+        {/* 7th card */}
         <div className="w-80 bg-[#0A1A36] p-4 rounded-2xl">
-          <div className="flex justify-between mb-4">
-            <h3 className="text-lg font-semibold">Orders overview</h3>
-            <span className="text-green-400 text-sm">+30% this month</span>
+          <div className="flex flex-col mb-4">
+            <h3 className="text-lg font-semibold mb-1">Orders overview</h3>
+            <span className="text-green-400 text-sm flex items-center gap-2">
+              <span className="text-center">
+                <img src={check} alt="" />
+              </span>
+              +30% this month
+            </span>
           </div>
           <ul className="space-y-4">
             {orders.map((order, index) => (
