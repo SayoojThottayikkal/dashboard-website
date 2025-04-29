@@ -6,9 +6,8 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  BarChart,
-  Bar,
 } from "recharts";
+
 import img1 from "../../assets/Images/dashboard/head4.png";
 import img2 from "../../assets/Images/dashboard/head3.png";
 import img3 from "../../assets/Images/dashboard/head2.png";
@@ -20,6 +19,25 @@ import image1 from "../../assets/Images/dashboard/Icon2.png";
 import image2 from "../../assets/Images/dashboard/Icon3.png";
 import image3 from "../../assets/Images/dashboard/Icon4.png";
 
+import Avatar1 from "../../assets/Images/dashboard/Avatar1.png";
+import Avatar2 from "../../assets/Images/dashboard/Avatar2.png";
+import Avatar3 from "../../assets/Images/dashboard/Avatar3.png";
+import Avatar4 from "../../assets/Images/dashboard/Avatar4.png";
+import Avatar5 from "../../assets/Images/dashboard/Avatar5.png";
+
+import icon1 from "../../assets/Images/project/img1.png";
+import icon2 from "../../assets/Images/project/img2.png";
+import icon3 from "../../assets/Images/project/img3.png";
+import icon4 from "../../assets/Images/project/img4.png";
+import icon5 from "../../assets/Images/project/img5.svg";
+import icon6 from "../../assets/Images/dashboard/invision1.svg";
+
+import Vectoricon1 from "../../assets/Images/dashboard/Vectoricon1.png";
+import Vectoricon2 from "../../assets/Images/dashboard/Vectoricon2.png";
+import Vectoricon3 from "../../assets/Images/dashboard/Vectoricon5.png";
+import Vectoricon4 from "../../assets/Images/dashboard/iconnew.png";
+import Vectoricon5 from "../../assets/Images/dashboard/bell.png";
+
 const salesData = [
   { name: "Jan", sales: 4000 },
   { name: "Feb", sales: 3000 },
@@ -29,21 +47,82 @@ const salesData = [
   { name: "Jun", sales: 7000 },
 ];
 
-const activeUsersData = [
-  { name: "Mon", users: 200 },
-  { name: "Tue", users: 300 },
-  { name: "Wed", users: 250 },
-  { name: "Thu", users: 400 },
-  { name: "Fri", users: 300 },
-  { name: "Sat", users: 500 },
-  { name: "Sun", users: 600 },
+const projects = [
+  {
+    company: "Chakra Soft UI Version",
+    icon: icon4,
+    members: [Avatar1, Avatar2, Avatar3],
+    budget: "$14,000",
+    completion: 60,
+  },
+  {
+    company: "Add Progress Track",
+    icon: icon1,
+    members: [Avatar2],
+    budget: "$3,000",
+    completion: 10,
+  },
+  {
+    company: "Fix Platform Errors",
+    icon: icon5,
+    members: [Avatar4],
+    budget: "Not set",
+    completion: 100,
+  },
+  {
+    company: "Launch our Mobile App",
+    icon: icon3,
+    members: [Avatar1, Avatar3, Avatar5],
+    budget: "$32,000",
+    completion: 100,
+  },
+  {
+    company: "Add the New Pricing Page",
+    icon: icon2,
+    members: [Avatar2, Avatar4],
+    budget: "$400",
+    completion: 25,
+  },
+  {
+    company: "Redesign New Online Shop",
+    icon: icon6,
+    members: [Avatar1],
+    budget: "$7,600",
+    completion: 40,
+  },
 ];
 
-const projects = [
-  { name: "Crypto Dashboard", budget: "$2,400", completion: 90 },
-  { name: "AI Trading Bot", budget: "$1,800", completion: 75 },
-  { name: "E-commerce App", budget: "$3,500", completion: 60 },
-  { name: "Social Media Site", budget: "$4,200", completion: 80 },
+const orders = [
+  {
+    icon: Vectoricon5,
+    text: "$2400, Design changes",
+    date: "22 DEC 7:20 PM",
+  },
+  {
+    icon: Vectoricon3,
+    text: "New order #24124923",
+    date: "21 DEC 11:21 PM",
+  },
+  {
+    icon: Vectoricon2,
+    text: "Server Payments for April",
+    date: "21 DEC 9:28 PM",
+  },
+  {
+    icon: Vectoricon4,
+    text: "New card added for order #3210145",
+    date: "20 DEC 3:45 PM",
+  },
+  {
+    icon: Vectoricon1,
+    text: "Unlock packages for Development",
+    date: "19 DEC 11:34 PM",
+  },
+  {
+    icon: icon4,
+    text: "New order #9851258",
+    date: "18 DEC 4:41 PM",
+  },
 ];
 
 export default function Dashboard() {
@@ -295,32 +374,65 @@ export default function Dashboard() {
         </div>
       </div>
       {/* 6th card */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-[#121a3b] rounded-2xl p-6 shadow-md">
-          <h4 className="text-xl font-semibold mb-4">Projects</h4>
-          {projects.map((project, index) => (
-            <div key={index} className="mb-4">
-              <div className="flex justify-between text-sm font-semibold">
-                <span>{project.name}</span>
-                <span className="text-gray-400">{project.budget}</span>
-              </div>
-              <div className="w-full bg-gray-700 rounded-full h-3 mt-2">
-                <div
-                  className="bg-green-400 h-3 rounded-full"
-                  style={{ width: `${project.completion}%` }}
-                ></div>
-              </div>
-            </div>
-          ))}
+      <div className="flex gap-6 bg-gradient-to-br from-[#0B1532] to-[#051F3D] p-6 rounded-3xl text-white text-sm">
+        {/* Projects */}
+        <div className="flex-1 bg-[#0A1A36] p-4 rounded-2xl">
+          <div className="flex justify-between mb-4">
+            <h3 className="text-lg font-semibold">Projects</h3>
+            <span className="text-green-400 text-sm">30 done this month</span>
+          </div>
+          <table className="w-full text-left">
+            <thead>
+              <tr className="text-gray-400 text-xs border-b border-gray-600">
+                <th className="pb-2">COMPANIES</th>
+                <th>MEMBERS</th>
+                <th>BUDGET</th>
+                <th>COMPLETION</th>
+              </tr>
+            </thead>
+            <tbody>
+              {projects.map((proj, index) => (
+                <tr key={index} className="border-b border-gray-700">
+                  <td className="py-2 flex items-center gap-2">
+                    <img src={proj.icon} alt="" />
+                    {proj.company}
+                  </td>
+                  <td>
+                    <img src={proj.members.join(" ") || "-"} alt="" />
+                  </td>
+                  <td>{proj.budget}</td>
+                  <td>
+                    <div className="w-full bg-gray-700 rounded-full h-2">
+                      <div
+                        className="bg-blue-500 h-2 rounded-full"
+                        style={{ width: `${proj.completion}%` }}
+                      ></div>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
-        <div className="bg-[#121a3b] rounded-2xl p-6 shadow-md">
-          <h4 className="text-xl font-semibold mb-4">Orders Overview</h4>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
-            <li>New Order Received</li>
-            <li>Payment Confirmed</li>
-            <li>Order Shipped</li>
-            <li>Delivered</li>
+        {/* Orders Overview */}
+        <div className="w-80 bg-[#0A1A36] p-4 rounded-2xl">
+          <div className="flex justify-between mb-4">
+            <h3 className="text-lg font-semibold">Orders overview</h3>
+            <span className="text-green-400 text-sm">+30% this month</span>
+          </div>
+          <ul className="space-y-4">
+            {orders.map((order, index) => (
+              <li key={index} className="flex items-start gap-3">
+                <div className=" p-2">
+                  <img src={order.icon} alt="" />
+                </div>
+                <div>
+                  <p>{order.text}</p>
+                  <span className="text-gray-400 text-xs">{order.date}</span>
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
