@@ -2,9 +2,9 @@ import React from "react";
 import img from "../../assets/Images/billing/icon.png";
 import img3 from "../../assets/Images/billing/Circles.png";
 import img2 from "../../assets/Images/billing/atm.svg";
-import img5 from "../../assets/Images/billing/vector1.png";
-import img4 from "../../assets/Images/billing/vector.svg";
-import imgcard from "../../assets/Images/billing/shadow.png";
+import img5 from "../../assets/Images/billing/Vector1.png";
+import img4 from "../../assets/Images/billing/Vector.svg";
+import imgcard from "../../assets/Images/billing/Shadow.png";
 function Billing() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 text-white font-sans">

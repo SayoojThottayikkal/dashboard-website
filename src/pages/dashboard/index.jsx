@@ -38,6 +38,7 @@ import Vectoricon3 from "../../assets/Images/dashboard/Vectoricon5.png";
 import Vectoricon4 from "../../assets/Images/dashboard/iconnew.png";
 import Vectoricon5 from "../../assets/Images/dashboard/bell.png";
 import check from "../../assets/Images/dashboard/check.png";
+import BorderLinearProgress from "../../components/ui/progress/LinearProgressBar";
 
 const salesData = [
   { name: "Jan", sales: 4000 },
@@ -403,11 +404,15 @@ export default function Dashboard() {
                     {proj.company}
                   </td>
                   <td>
-                    <img src={proj.members.join(" ") || "-"} alt="" />
+                    <div className="flex">
+                      {proj.members.map((ico) => (
+                        <img src={ico} alt="" />
+                      ))}
+                    </div>
                   </td>
                   <td>{proj.budget}</td>
                   <td>
-                    <div className="w-full bg-gray-700 rounded-full h-2">
+                    {/* <div className="w-full bg-gray-700 rounded-full h-2">
                       <div
                         className="bg-blue-500 h-2 rounded-full"
                         style={{ width: `${proj.completion}%` }}
@@ -415,7 +420,11 @@ export default function Dashboard() {
                       <span className="text-xs text-white ml-1">
                         {proj.completion}%
                       </span>
-                    </div>
+                    </div> */}
+                    <BorderLinearProgress
+                      variant="determinate"
+                      value={proj.completion}
+                    />
                   </td>
                 </tr>
               ))}
