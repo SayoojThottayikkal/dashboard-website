@@ -1,10 +1,16 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import AppRouter from "./AppRouter";
 import Login from "../../pages/signup/Login";
+import { Context } from "../context/store";
 
 export default function MainRouter() {
-  const isLogin = true;
+  const {
+    state: { user_data },
+  } = useContext(Context);
+
+  const isLogin = user_data.userDetails?.isLogin;
+
   return (
     <Routes>
       {isLogin ? (
@@ -12,7 +18,7 @@ export default function MainRouter() {
       ) : (
         <Fragment>
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Navigate to="/login" replace />} />
+          <Route path="*" element={<Navigate to="/login" replace />} />
         </Fragment>
       )}
     </Routes>

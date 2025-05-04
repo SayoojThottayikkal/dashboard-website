@@ -1,10 +1,42 @@
-import React from "react";
-import { useState } from "react";
+import React, { useContext, useState } from "react";
 import img from "../../assets/Images/img1.png";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebaseConfig";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Context } from "../../app/context/store";
+import { useNavigate } from "react-router-dom";
+
 export default function Login() {
   const [enabled, setEnabled] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { dispatch } = useContext(Context);
+  const navigate = useNavigate();
+
+  const login = async (e) => {
+    e.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      toast.success("Login successful!");
+      dispatch({
+        type: "UPDATE_USER_DATA",
+        user_data: {
+          userDetails: {
+            isLogin: true,
+          },
+        },
+      });
+      navigate("/");
+    } catch (error) {
+      toast.error("Login failed. Please check credentials.");
+    }
+  };
+
   return (
     <div className="min-h-screen flex ">
+      <ToastContainer position="top-right" autoClose={3000} />
+
       <div className="w-1/2 hidden lg:flex items-center justify-center bg-black relative">
         <img
           src={img}
@@ -20,6 +52,7 @@ export default function Login() {
           </h1>
         </div>
       </div>
+
       <div className="w-full lg:w-1/2 flex items-center justify-center bg-[#0F172A] px-6 py-12">
         <div className="w-full max-w-sm space-y-6">
           <div className="text-white">
@@ -29,7 +62,7 @@ export default function Login() {
             </p>
           </div>
 
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={login}>
             <div>
               <label htmlFor="email" className="block text-sm text-white mb-1">
                 Email
@@ -38,6 +71,8 @@ export default function Login() {
                 id="email"
                 type="email"
                 placeholder="Your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-3 rounded-xl bg-[#1E293B] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
@@ -54,6 +89,8 @@ export default function Login() {
                 id="password"
                 type="password"
                 placeholder="Your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-3 rounded-xl bg-[#1E293B] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
