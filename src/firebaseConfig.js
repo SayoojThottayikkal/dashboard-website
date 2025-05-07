@@ -1,15 +1,14 @@
-// src/firebaseConfig.js
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBIf3VEnggtpQCa0x26pAtH9m0-Dg9CrBM",
-  authDomain: "vl-hypermarket-d5e1a.firebaseapp.com",
-  projectId: "vl-hypermarket-d5e1a",
-  storageBucket: "vl-hypermarket-d5e1a.firebasestorage.app",
-  messagingSenderId: "917713255245",
-  appId: "1:917713255245:web:858401ab158c14ce011504",
-  measurementId: "G-JCK1EQ34M4",
+  apiKey: "AIzaSyD5wi3yRLxCPE9t0xt-T6Gi-LeRE8pTrxI",
+  authDomain: "vlhypermarket-2d2be.firebaseapp.com",
+  projectId: "vlhypermarket-2d2be",
+  storageBucket: "vlhypermarket-2d2be.firebasestorage.app",
+  messagingSenderId: "565476385464",
+  appId: "1:565476385464:web:2cbc4e1a562751452d4a4d",
+  measurementId: "G-EDQ18RPG7L",
 };
 
 const app = initializeApp(firebaseConfig);

@@ -39,91 +39,109 @@ import Vectoricon4 from "../../assets/Images/dashboard/iconnew.png";
 import Vectoricon5 from "../../assets/Images/dashboard/bell.png";
 import check from "../../assets/Images/dashboard/check.png";
 import BorderLinearProgress from "../../components/ui/progress/LinearProgressBar";
+const hypermarket = [
+  {
+    title: "Total Sales",
+    value: "120,000",
+    change: "+18%",
+    color: "text-green-400",
+    image: img1,
+  },
+  {
+    title: "Daily Customers",
+    value: "4,500",
+    change: "+10%",
+    color: "text-green-400",
+    image: img2,
+  },
+  {
+    title: "New Suppliers",
+    value: "12",
+    change: "+5%",
+    color: "text-green-400",
+    image: img3,
+  },
+  {
+    title: "Returned Items",
+    value: "134",
+    change: "-3%",
+    color: "text-red-400",
+    image: img4,
+  },
+];
 
 const salesData = [
-  { name: "Jan", sales: 4000 },
-  { name: "Feb", sales: 3000 },
-  { name: "Mar", sales: 5000 },
-  { name: "Apr", sales: 4000 },
-  { name: "May", sales: 6000 },
-  { name: "Jun", sales: 7000 },
+  { name: "Jan", sales: 15000 },
+  { name: "Feb", sales: 18000 },
+  { name: "Mar", sales: 22000 },
+  { name: "Apr", sales: 25000 },
+  { name: "May", sales: 27000 },
+  { name: "Jun", sales: 30000 },
 ];
 
 const projects = [
   {
-    company: "Chakra Soft UI Version",
-    icon: icon4,
-    members: [Avatar1, Avatar2, Avatar3],
-    budget: "$14,000",
-    completion: 60,
-  },
-  {
-    company: "Add Progress Track",
+    company: "Fresh Produce Restock",
     icon: icon1,
-    members: [Avatar2],
-    budget: "$3,000",
-    completion: 10,
+    members: [Avatar1, Avatar2],
+    budget: "5,000",
+    completion: 75,
   },
   {
-    company: "Fix Platform Errors",
-    icon: icon5,
-    members: [Avatar4],
-    budget: "Not set",
-    completion: 100,
-  },
-  {
-    company: "Launch our Mobile App",
-    icon: icon3,
-    members: [Avatar1, Avatar3, Avatar5],
-    budget: "$32,000",
-    completion: 100,
-  },
-  {
-    company: "Add the New Pricing Page",
+    company: "Summer Sale Setup",
     icon: icon2,
-    members: [Avatar2, Avatar4],
-    budget: "$400",
-    completion: 25,
+    members: [Avatar3],
+    budget: "2,500",
+    completion: 50,
   },
   {
-    company: "Redesign New Online Shop",
-    icon: icon6,
-    members: [Avatar1],
-    budget: "$7,600",
-    completion: 40,
+    company: "New Supplier Integration",
+    icon: icon3,
+    members: [Avatar4, Avatar5],
+    budget: "7,000",
+    completion: 90,
+  },
+  {
+    company: "Warehouse Reorg",
+    icon: icon4,
+    members: [Avatar2],
+    budget: "Not set",
+    completion: 30,
+  },
+  {
+    company: "POS System Upgrade",
+    icon: icon5,
+    members: [Avatar1, Avatar3],
+    budget: "12,000",
+    completion: 60,
   },
 ];
 
 const orders = [
   {
-    icon: Vectoricon5,
-    text: "$2400, Design changes",
-    date: "22 DEC 7:20 PM",
-  },
-  {
-    icon: Vectoricon3,
-    text: "New order #24124923",
-    date: "21 DEC 11:21 PM",
+    icon: Vectoricon1,
+    text: "Order #894522 delivered",
+    date: "06 MAY 9:30 AM",
   },
   {
     icon: Vectoricon2,
-    text: "Server Payments for April",
-    date: "21 DEC 9:28 PM",
+    text: "Returned item processed",
+    date: "05 MAY 4:50 PM",
+  },
+  {
+    icon: Vectoricon3,
+    text: "Inventory check completed",
+    date: "05 MAY 12:10 PM",
   },
   {
     icon: Vectoricon4,
-    text: "New card added for order #3210145",
-    date: "20 DEC 3:45 PM",
+    text: "New supplier added",
+    date: "04 MAY 3:15 PM",
   },
   {
-    icon: Vectoricon1,
-    text: "Unlock packages for Development",
-    date: "19 DEC 11:34 PM",
-  },
-  {
-    icon: icon4,
-    text: "New order #9851258",
-    date: "18 DEC 4:41 PM",
+    icon: Vectoricon5,
+    text: "Promo pricing updated",
+    date: "03 MAY 6:45 PM",
   },
 ];
 
@@ -132,36 +150,7 @@ export default function Dashboard() {
     <div className="min-h-screen bg-gradient-to-b from-[#0a0f24] to-[#0f172a] text-white p-4">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         {/* Top Cards */}
-        {[
-          {
-            title: "Revenue",
-            value: "$53,000",
-            change: "+55%",
-            color: "text-green-400",
-            image: img1,
-          },
-          {
-            title: "Today’s Users",
-            value: "2,300",
-            change: "+5%",
-            color: "text-green-400",
-            image: img2,
-          },
-          {
-            title: "New Clients",
-            value: "+3,052",
-            change: "-14%",
-            color: "text-red-400",
-            image: img3,
-          },
-          {
-            title: "Total Sales",
-            value: "$173,000",
-            change: "+8%",
-            color: "text-green-400",
-            image: img4,
-          },
-        ].map((item, index) => (
+        {hypermarket.map((item, index) => (
           <div
             key={index}
             className="bg-[#121a3b] rounded-2xl p-4 shadow-md  flex justify-between items-center"
