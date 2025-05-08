@@ -401,19 +401,13 @@ export default function Dashboard() {
                   </td>
                   <td>{proj.budget}</td>
                   <td>
-                    {/* <div className="w-full bg-gray-700 rounded-full h-2">
-                      <div
-                        className="bg-blue-500 h-2 rounded-full"
-                        style={{ width: `${proj.completion}%` }}
-                      ></div>
-                      <span className="text-xs text-white ml-1">
-                        {proj.completion}%
-                      </span>
-                    </div> */}
                     <BorderLinearProgress
                       variant="determinate"
                       value={proj.completion}
                     />
+                    <span className="text-xs text-white ml-1">
+                      {proj.completion}%
+                    </span>
                   </td>
                 </tr>
               ))}

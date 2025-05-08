@@ -18,8 +18,8 @@ export default function SideBar() {
 
   const navItems = [
     { id: "1", title: "Dashboard", icon: <FaTachometerAlt />, route: "/" },
-    { id: "2", title: "Tables", icon: <FaTable />, route: "/Teams" },
-    { id: "3", title: "Project", icon: <FaRProject />, route: "/Projects" },
+    { id: "2", title: "Orders", icon: <FaTable />, route: "/Teams" },
+    { id: "3", title: "Product", icon: <FaRProject />, route: "/Projects" },
     {
       id: "4",
       title: "Billing",
@@ -30,7 +30,7 @@ export default function SideBar() {
 
   const accountItem = {
     id: "5",
-    title: "Sign In",
+    title: "Log Out",
     icon: <FaSignInAlt />,
     route: "/login",
   };
@@ -73,7 +73,7 @@ export default function SideBar() {
 
       {isOpen && (
         <h1 className="text-xs font-bold text-gray-400 mb-6 ml-4">
-          VISION UI FREE
+          VL Hypermarket
         </h1>
       )}
 
@@ -86,7 +86,7 @@ export default function SideBar() {
       )}
       <div>{renderNavItem(accountItem)}</div>
 
-      <div className="relative mt-10 rounded-2xl overflow-hidden">
+      {/* <div className="relative mt-10 rounded-2xl overflow-hidden">
         <img src={img} alt="Help" className="w-full h-auto object-cover" />
         <div className="absolute top-4 left-4 text-white">
           {isOpen && (
@@ -107,7 +107,7 @@ export default function SideBar() {
             </button>
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }
