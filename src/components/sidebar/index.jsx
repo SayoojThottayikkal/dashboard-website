@@ -83,10 +83,11 @@ export default function SideBar() {
           ACCOUNT PAGES
         </h2>
       )}
-      <div>
-        <LogoutButton />
-      </div>
-
+      {isOpen && (
+        <div className="text-xs font-semiboldmb-2 ml-4">
+          <LogoutButton />
+        </div>
+      )}
       {/* <div className="relative mt-10 rounded-2xl overflow-hidden">
         <img src={img} alt="Help" className="w-full h-auto object-cover" />
         <div className="absolute top-4 left-4 text-white">

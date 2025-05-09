@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import img from "../../assets/Images/img1.png";
+import img from "../../assets/Images/img1.jpg";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 import { toast, ToastContainer } from "react-toastify";
@@ -47,9 +47,7 @@ export default function Login() {
           <p className="text-sm tracking-widest uppercase text-gray-300 mb-2">
             Inspired by the future:
           </p>
-          <h1 className="text-3xl font-bold tracking-wide">
-            THE VISION UI DASHBOARD
-          </h1>
+          <h1 className="text-3xl font-bold tracking-wide">VL HYPERMARKET</h1>
         </div>
       </div>
 
@@ -96,26 +94,7 @@ export default function Login() {
               />
             </div>
 
-            <div className="flex items-center space-x-3">
-              <button
-                type="button"
-                role="switch"
-                aria-checked={enabled}
-                onClick={() => setEnabled(!enabled)}
-                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 ${
-                  enabled ? "bg-blue-600" : "bg-gray-400"
-                }`}
-              >
-                <span
-                  className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform duration-300 ${
-                    enabled ? "translate-x-5" : "translate-x-1"
-                  }`}
-                />
-              </button>
-              <span className="text-white text-sm font-medium">
-                Remember me
-              </span>
-            </div>
+            {/*  */}
 
             <button
               type="submit"
@@ -124,16 +103,6 @@ export default function Login() {
               SIGN IN
             </button>
           </form>
-
-          <p className="text-center text-sm text-white">
-            Don’t have an account?{" "}
-            <a
-              href="/signup"
-              className="text-blue-400 font-medium hover:underline"
-            >
-              Sign up
-            </a>
-          </p>
         </div>
       </div>
     </div>
