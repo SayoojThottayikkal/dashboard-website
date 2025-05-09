@@ -3,7 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import AppRouter from "./AppRouter";
 import Login from "../../pages/signup/Login";
 import { Context } from "../context/store";
-
+import Logout from "../../pages/logout";
 export default function MainRouter() {
   const {
     state: { user_data },
@@ -18,9 +18,11 @@ export default function MainRouter() {
       ) : (
         <Fragment>
           <Route path="/login" element={<Login />} />
+
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Fragment>
       )}
+      <Route path="/logout" element={<Logout />} />
     </Routes>
   );
 }

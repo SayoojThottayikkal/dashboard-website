@@ -8,8 +8,7 @@ import {
   FaRProject,
   FaBars,
 } from "react-icons/fa";
-import img from "../../assets/Images/side1.png";
-import img1 from "../../assets/Images/side2.png";
+import LogoutButton from "../../pages/logout";
 
 export default function SideBar() {
   const navigate = useNavigate();
@@ -32,7 +31,7 @@ export default function SideBar() {
     id: "5",
     title: "Log Out",
     icon: <FaSignInAlt />,
-    route: "/login",
+    route: "/logout",
   };
 
   const renderNavItem = (item) => (
@@ -84,7 +83,9 @@ export default function SideBar() {
           ACCOUNT PAGES
         </h2>
       )}
-      <div>{renderNavItem(accountItem)}</div>
+      <div>
+        <LogoutButton />
+      </div>
 
       {/* <div className="relative mt-10 rounded-2xl overflow-hidden">
         <img src={img} alt="Help" className="w-full h-auto object-cover" />
